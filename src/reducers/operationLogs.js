@@ -11,7 +11,11 @@ const operationLogs = (state = [], action) => {
             return [operationLog, ...state]
 
         case DELETE_OPERATION_LOG:
-            return state
+            const delOperationLog = {
+                description: action.description,
+                operatedAt: action.operatedAt
+            }
+            return [delOperationLog, ...state]
 
         case DELETE_ALL_OPERATION_LOGS:
             return []
